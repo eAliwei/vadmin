@@ -29,11 +29,20 @@
 </template>
 
 <script>
+import { users } from '../../api'
+
 export default {
   data () {
     return {
       users: []
     }
+  },
+  beforeMount () {
+    users.list().then((response) => {
+      this.users = response.data.users
+    }, (error) => {
+      console.log(error.response.data)
+    })
   }
 }
 </script>

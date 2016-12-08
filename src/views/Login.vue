@@ -79,6 +79,7 @@ export default {
         password: '',
         remember: false
       }
+      this.errors = {}
     }
   }
 }
